@@ -16,7 +16,12 @@ def search_in_dictionary(w):
         for meaning in meanings:
             print(meaning)
     except:
-        
+        similar_words = get_close_matches(w, words_list.keys(), n=5, cutoff=0.85)
+        result = input("are you searching for the meaning of {}? if yes press Y. ".format(similar_words[0]))
+        if result.lower == "y":
+            search_in_dictionary(similar_words[0])
+        else:
+            print("search has no result")
 
 word = get_user_input()        
 search_in_dictionary(word)
