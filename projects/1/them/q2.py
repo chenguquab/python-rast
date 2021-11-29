@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+from difflib import get_close_matches
 
 
 data = Path("data.json").read_text()
@@ -15,7 +16,7 @@ def search_in_dictionary(w):
         for meaning in meanings:
             print(meaning)
     except:
-        print("the search no result")
+        
 
 word = get_user_input()        
 search_in_dictionary(word)
