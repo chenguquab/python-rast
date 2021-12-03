@@ -21,9 +21,12 @@ for lt,ln,nm,hg,st in zip(lat, lon, name, height, state):
 
 for lt,ln,nm,hg,st in zip(lat, lon, name, height, state):
     html = """
-    <h1>iranian waterdfall<h1/>
-    """
-    iframe = folium.IFrame(html=html, width=300, height=200)
+    <h1>Name: %s<h1/>
+    <h4>Height: %s meters<h4/>
+    <h4>State: %s<h4/>
+    <a href="https://google.com/search?q=%s waterfall">Read More</a>
+    """ % (nm,hg,st,nm)
+    iframe = folium.IFrame(html=html , width=300, height=200)
     fg.add_child(folium.Marker(location=[lt,ln], popup=folium.Popup(iframe)))
 
 
