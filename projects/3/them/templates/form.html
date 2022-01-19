@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/{{ form_action }}" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter First Name" name="first" value="{{ member.first }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"placeholder="Enter Last Name" name="last" value="{{ member.last }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"placeholder="Enter Email Address" name="email" value="{{ member.email }}">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"placeholder="Enter Phone Number" name="phone" value="{{ member.phone }}">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+        <input type="hidden" name="id" value="{{ member.id }}"/>
+    </form>
+{% endblock %}

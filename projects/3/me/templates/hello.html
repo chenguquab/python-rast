@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<title>Hello from flask</title>
+<a href="{{url_for('about')}}">Link</a>
+{% if name %}
+    <h1>HELOO {{ name }}</h1>
+{% else %}
+    <h1>Hello, World!</h1>
+{% endif %}
